@@ -6,6 +6,22 @@
     <title>Congratulations</title>
 </head>
 <body>
+    <#list congratulations as congratulation>
+        <p>Автор: ${congratulation.author}</p>
+        <p>Поздравление: ${congratulation.content}</p>
+        <br>
+    </#list>
 
+    <br>
+
+    <form action="http://localhost:8080/congratulations"  method="post">
+        <label>
+            <input type="text" maxlength="32" placeholder="Автор" name="author" >
+        </label>
+        <label>
+            <input type="text" max="512" placeholder="Поздравление" name="content" >
+        </label>
+        <input type="submit" value="Сохранить">
+    </form>
 </body>
 </html>
